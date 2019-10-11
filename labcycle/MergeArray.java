@@ -24,26 +24,14 @@ class MergeArray {
 		merged = new int[size];
 		
 		while(n != size-1) {	
-			if(i == a.length - 1) {
-				merged[n] = b[j];
-				j++;
-				n++;
-			}
-			else if(j == b.length - 1) {
-				merged[n] = a[i];
-				i++;
-				n++;
-			}
-			else if(a[i] <= b[j]) {
-				merged[n] = a[i];
-				i++;
-				n++;
-			}
-			else if(b[j] <= a[i]) {
-				merged[n] = b[j];
-				j++;
-				n++;
-			}
+			if(i == a.length - 1)
+				merged[n++] = b[j++];
+			else if(j == b.length - 1)
+				merged[n++] = a[i]++;
+			else if(a[i] <= b[j])
+				merged[n++] = a[i++];
+			else if(b[j] <= a[i])
+				merged[n++] = b[j++];
 		}
 		
 		System.out.println("Sorted array:");
